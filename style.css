@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --strong-cyan: hsl(172, 67%, 45%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  gap: -20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: "Space Mono", monospace;
+  background-color: var(--light-grayish-cyan);
+}
+.header {
+  letter-spacing: 5px;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  color: var(--grayish-cyan);
+}
+.box {
+  width: min(1200px, 100%);
+  height: min(600px, 100vh);
+  background-color: var(--very-light-grayish-cyan);
+  border-radius: 20px;
+  display: block;
+  padding: 30px;
+}
+
+.form {
+  width: 48%;
+  height: 100%;
+  float: left;
+  font-size: 24px;
+  margin-right: 4%;
+}
+
+.bill {
+  width: 100%;
+  position: relative;
+}
+.numberOfPeople {
+  width: 100%;
+  position: relative;
+}
+
+.form img {
+  position: absolute;
+  left: 20px;
+  pointer-events: none;
+  top: 10px;
+}
+
+.labels {
+  color: var(--grayish-cyan);
+  width: 100%;
+}
+
+.form input {
+  width: 100%;
+  background-color: var(--light-grayish-cyan);
+  border: 2px solid var(--light-grayish-cyan);
+  color: var(--very-dark-cyan);
+  height: 50px;
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+  text-align: right;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.selectedTip {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  position: relative;
+}
+
+.selectedTip button {
+  width: 30.8%;
+  height: 60px;
+  background-color: var(--very-dark-cyan);
+  border: 2px solid var(--very-dark-cyan);
+  border-radius: 7px;
+  color: var(--white);
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+}
+
+.activeButton {
+  background-color: var(--strong-cyan) !important;
+  color: var(--very-dark-cyan) !important;
+  border: 2px solid var(--strong-cyan) !important;
+}
+
+#custom {
+  width: 31%;
+  height: 60px;
+  border-radius: 7px;
+  color: var(--grayish-cyan);
+  background-color: var(--light-grayish-cyan);
+  border: 2px solid var(--light-grayish-cyan);
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.results {
+  width: 48%;
+  height: 100%;
+  float: left;
+  background-color: var(--very-dark-cyan);
+  border-radius: 20px;
+  padding: 50px;
+}
+
+.calculations {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.calculations h3 {
+  color: var(--white);
+}
+
+.calculations h3 span {
+  color: var(--grayish-cyan);
+}
+
+.calculations h1 {
+  color: var(--strong-cyan);
+  font-size: 3rem;
+}
+
+.results button {
+  width: 100%;
+  height: 60px;
+  color: var(--very-dark-cyan);
+  background-color: var(--strong-cyan);
+  border: 2px solid var(--strong-cyan);
+  border-radius: 10px;
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  position: relative;
+  top: 33%;
+}
+
+@media only screen and (max-width: 600px) {
+  .box {
+    height: auto;
+  }
+  .form {
+    width: 100%;
+    height: 55%;
+  }
+  .results {
+    margin-top: 70px;
+    width: 100%;
+    height: 400px;
+    padding: 15px;
+  }
+  .selectedTip button {
+    width: 47%;
+  }
+
+  #custom {
+    width: 47%;
+  }
+  .results button {
+    top: 10%;
+  }
+}

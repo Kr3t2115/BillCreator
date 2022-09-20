@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Tip calculator app</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <!-- Bill
+
+  Select Tip %
+  5%
+  10%
+  15%
+  25%
+  50%
+  Custom
+
+  Number of People
+
+  Tip Amount
+  / person
+
+  Total
+  / person
+
+  Reset -->
+
+    <h1 class="header">SPLI<br />TTER</h1>
+
+    <div class="box">
+      <div class="form">
+        <div style="width: 100%">
+          <label class="labels">Bill</label>
+
+          <span
+            id="billError"
+            style="
+              color: lightcoral;
+              font-size: 18px;
+              float: right;
+              display: none;
+            "
+            >Can't be empty</span
+          >
+        </div>
+
+        <div class="bill">
+          <!-- <img src="./images/icon-dollar.svg" alt="dollar icon" /> -->
+          <input type="text" id="bill" onkeyup="calculate()" />
+        </div>
+
+        <div style="width: 100%; margin-top: 30px">
+          <label class="labels">Select Tip %</label>
+
+          <span
+            id="tipError"
+            style="
+              color: lightcoral;
+              font-size: 18px;
+              float: right;
+              display: none;
+            "
+            >Can't be empty</span
+          >
+        </div>
+
+        <div class="selectedTip">
+          <button onclick="setAmount(this)">5%</button>
+          <button onclick="setAmount(this)">10%</button>
+          <button onclick="setAmount(this)">15%</button>
+          <button onclick="setAmount(this)">25%</button>
+          <button onclick="setAmount(this)">50%</button>
+          <input
+            type="text"
+            placeholder="Custom"
+            onkeypress="setAmount(this)"
+            id="custom"
+          />
+        </div>
+
+        <div style="width: 100%">
+          <label class="labels" style="margin-top: 20px"
+            >Number of People</label
+          >
+
+          <span
+            id="peopleError"
+            style="
+              color: lightcoral;
+              font-size: 18px;
+              float: right;
+              display: none;
+            "
+            >Can't be zero</span
+          >
+        </div>
+        <div class="numberOfPeople">
+          <!-- <img src="./images/icon-person.svg" alt="person icon" /> -->
+          <input type="text" id="numberOfPeople" onkeyup="calculate()" />
+        </div>
+      </div>
+
+      <div class="results">
+        <div>
+          <div class="calculations">
+            <h3>
+              Tip Amount
+              <br />
+              <span>/ person</span>
+            </h3>
+
+            <h1 id="tipAmount">$0.00</h1>
+          </div>
+
+          <div class="calculations">
+            <h3>
+              Total<br />
+              <span>/ person</span>
+            </h3>
+            <h1 id="total">$0.00</h1>
+          </div>
+        </div>
+
+        <button onclick="reset()">RESET</button>
+      </div>
+    </div>
+  </body>
+</html>
